@@ -4,10 +4,10 @@ topology:
   nodes:
     arista-sw01:
       kind: arista_ceos
-      image: 4.36.2f
+      image: ceos:4.36.2F
     arista-sw02:
       kind: arista_ceos
-      image: 4.36.2f
+      image: ceos:4.36.2F
     frr-sw01:
       kind: linux
       image: quay.io/frrouting/frr:10.3.1
