@@ -1,4 +1,5 @@
 name: frr-ceos-ping-name
+prefix: ""
 
 topology:
   nodes:
