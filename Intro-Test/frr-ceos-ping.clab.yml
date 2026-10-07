@@ -13,6 +13,9 @@ topology:
     arista-sw02:
       kind: arista_ceos
       image: ceos:4.36.2F
+    arista-sw03:
+      kind: arista_ceos
+      image: ceos:4.36.2F
     frr-sw01:
       kind: linux
       image: quay.io/frrouting/frr:10.3.1
@@ -20,3 +23,4 @@ topology:
   links:
     - endpoints: [ "arista-sw01:eth1", "frr-sw01:eth1" ]
     - endpoints: [ "arista-sw01:eth2", "arista-sw02:eth1" ]
+    - endpoints: [ "arista-sw01:eth3", "arista-sw03:eth1" ]
