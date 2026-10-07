@@ -18,5 +18,6 @@ topology:
       image: quay.io/frrouting/frr:10.3.1
 
   links:
-    - endpoints: ["arista-sw01:eth1", "frr-sw01:eth1"]
-    - endpoints: ["arista-sw01:eth2", "arista-sw02:eth1"]
+    - endpoints: [ "arista-sw01:eth1", "frr-sw01:eth1" ]
+    - endpoints: [ "arista-sw01:eth2", "arista-sw02:eth1" ]
+    - endpoints: [ "frr-sw01:eth2", "arista-sw02:eth2" ]
