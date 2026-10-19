@@ -1,0 +1,54 @@
+name: SR-MPLS
+prefix: ""
+
+topology:
+  kinds:
+    arista_ceos:
+      env:
+        CLAB_MGMT_VRF: MGMT
+  nodes:
+    arista-sw01:
+      kind: arista_ceos
+      image: ceos:4.36.2F
+      mgmt-ipv4: 172.20.20.11
+      startup-config: ../configs/arista-sw01.cfg
+    arista-sw02:
+      kind: arista_ceos
+      image: ceos:4.36.2F
+      mgmt-ipv4: 172.20.20.12
+      startup-config: ../configs/arista-sw02.cfg
+    arista-sw03:
+      kind: arista_ceos
+      image: ceos:4.36.2F
+      mgmt-ipv4: 172.20.20.13
+      startup-config: ../configs/arista-sw03.cfg
+    arista-sw04:
+      kind: arista_ceos
+      image: ceos:4.36.2F
+      mgmt-ipv4: 172.20.20.14
+      startup-config: ../configs/arista-sw04.cfg
+    frr-sw01:
+      kind: linux
+      image: quay.io/frrouting/frr:10.3.1
+    client1:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool:latest
+      exec:
+        - ip addr add 10.0.11.50/24 dev eth1
+        - ip link set eth1 up
+        - ip route add 10.0.0.0/8 via 10.0.11.1
+    client2:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool:latest
+      exec:
+        - ip addr add 10.0.10.50/24 dev eth1
+        - ip link set eth1 up
+        - ip route add 10.0.0.0/8 via 10.0.10.1
+
+  links:
+    - endpoints: [ "arista-sw01:eth1", "frr-sw01:eth1" ]
+    - endpoints: [ "arista-sw01:eth2", "arista-sw02:eth1" ]
+    - endpoints: [ "arista-sw01:eth3", "arista-sw03:eth1" ]
+    - endpoints: [ "arista-sw04:eth1", "arista-sw03:eth2" ]
+    - endpoints: [ "client1:eth1", "arista-sw04:eth2" ]
+    - endpoints: [ "client2:eth1", "arista-sw02:eth2" ]
