@@ -27,6 +27,11 @@ topology:
       image: ceos:4.36.2F
       mgmt-ipv4: 172.20.20.14
       startup-config: ../configs/arista-sw04.cfg
+    arista-sw05:
+      kind: arista_ceos
+      image: ceos:4.36.2F
+      mgmt-ipv4: 172.20.20.15
+      startup-config: ../configs/arista-sw05.cfg
     frr-sw01:
       kind: linux
       image: quay.io/frrouting/frr:10.3.1
@@ -52,3 +57,4 @@ topology:
     - endpoints: [ "arista-sw04:eth1", "arista-sw03:eth2" ]
     - endpoints: [ "client1:eth1", "arista-sw04:eth2" ]
     - endpoints: [ "client2:eth1", "arista-sw02:eth2" ]
+    - endpoints: [ "arista-sw05:eth1", "arista-sw01:eth4" ]
