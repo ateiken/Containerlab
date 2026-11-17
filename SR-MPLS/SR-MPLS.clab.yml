@@ -49,6 +49,13 @@ topology:
         - ip addr add 10.0.10.50/24 dev eth1
         - ip link set eth1 up
         - ip route add 10.0.0.0/8 via 10.0.10.1
+    client3:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool:latest
+      exec:
+        - ip addr add 10.0.12.50/24 dev eth1
+        - ip link set eth1 up
+        - ip route add 10.0.0.0/8 via 10.0.12.1
 
   links:
     - endpoints: [ "arista-sw01:eth1", "frr-sw01:eth1" ]
@@ -58,3 +65,4 @@ topology:
     - endpoints: [ "client1:eth1", "arista-sw04:eth2" ]
     - endpoints: [ "client2:eth1", "arista-sw02:eth2" ]
     - endpoints: [ "arista-sw05:eth1", "arista-sw01:eth4" ]
+    - endpoints: [ "client3:eth1", "arista-sw05:eth2" ]
