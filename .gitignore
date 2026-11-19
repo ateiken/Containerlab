@@ -217,6 +217,5 @@ __marimo__/
 # Containerlab
 clab-*/
 .*.clab.yml.bak
-*.annotations.json
 # Streamlit
 .streamlit/secrets.toml

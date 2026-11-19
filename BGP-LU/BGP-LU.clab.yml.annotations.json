@@ -1,0 +1,78 @@
+{
+  "freeTextAnnotations": [],
+  "freeShapeAnnotations": [],
+  "trafficRateAnnotations": [],
+  "scriptButtonAnnotations": [],
+  "groupStyleAnnotations": [],
+  "networkNodeAnnotations": [],
+  "nodeAnnotations": [
+    {
+      "id": "arista-sw01",
+      "position": {
+        "x": 340,
+        "y": 420
+      }
+    },
+    {
+      "id": "arista-sw02",
+      "position": {
+        "x": 380,
+        "y": 580
+      }
+    },
+    {
+      "id": "arista-sw03",
+      "position": {
+        "x": 360,
+        "y": 280
+      }
+    },
+    {
+      "id": "arista-sw04",
+      "position": {
+        "x": 400,
+        "y": 120
+      }
+    },
+    {
+      "id": "arista-sw05",
+      "position": {
+        "x": 140,
+        "y": 400
+      }
+    },
+    {
+      "id": "frr-sw01",
+      "position": {
+        "x": 400,
+        "y": 500
+      }
+    },
+    {
+      "id": "client1",
+      "position": {
+        "x": 480,
+        "y": -40
+      }
+    },
+    {
+      "id": "client2",
+      "position": {
+        "x": 460,
+        "y": 720
+      }
+    },
+    {
+      "id": "client3",
+      "position": {
+        "x": -20,
+        "y": 380
+      }
+    }
+  ],
+  "edgeAnnotations": [],
+  "aliasEndpointAnnotations": [],
+  "viewerSettings": {
+    "nodeStyle": "boxed"
+  }
+}
